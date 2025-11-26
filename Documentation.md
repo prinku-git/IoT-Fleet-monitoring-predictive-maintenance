@@ -27,7 +27,7 @@ This layer ensures data compliance, operational visibility, and timely communica
 
 ### 1.3. Architecture Diagram - 
 
-<img width="1366" height="768" alt="Architecture" src="https://github.com/user-attachments/assets/6f11b608-c3d5-4370-8c66-a983b2dd37f4" />
+<img width="1366" height="768" alt="Architecture" src="https://github.com/user-attachments/assets/15814914-6470-4218-8099-3d8c857104f7" />
 
 
 ## 2. Foundation Setup: Security (IAM & KMS)
@@ -43,8 +43,8 @@ The use of a Customer Managed Key (CMK) is a security best practice for enterpri
 5.  Set the alias name and add a description.
 6.  Define Key Administrators and Key Users (IAM roles/users that can use the key for encryption/decryption). Review and finalize.
 
-<img width="940" height="491" alt="image" src="https://github.com/user-attachments/assets/ebff37c7-78de-4765-959f-18ac18fcd0b4" />
-<img width="934" height="525" alt="image" src="https://github.com/user-attachments/assets/a31de7b3-c9a6-4a10-86a5-20bd619bb703" />
+<img width="1366" height="709" alt="3" src="https://github.com/user-attachments/assets/3fe73c58-e838-46d1-a850-432b99915a71" />
+<img width="1366" height="703" alt="4" src="https://github.com/user-attachments/assets/59715a01-348f-44c0-bd10-2879b3d8caa4" />
 
 
 ### 2.2. IAM Role for Lambda Function
@@ -83,8 +83,8 @@ This bucket receives the raw telemetry files and is secured using the CMK.
 6.  Choose **"Customer managed key (CMK)"** and select the `KMS-NAME` key alias.
 7.  Click **"Create bucket"**.
 
-<img width="849" height="464" alt="image" src="https://github.com/user-attachments/assets/121791a0-34ea-4e28-93cc-d758556daf82" />
-<img width="940" height="513" alt="image" src="https://github.com/user-attachments/assets/990eb612-880b-4f54-9739-d70252e2663e" />
+<img width="1366" height="711" alt="6" src="https://github.com/user-attachments/assets/21d34562-ef98-4d55-aee5-8a944ffe4ade" />
+<img width="1366" height="709" alt="7" src="https://github.com/user-attachments/assets/83834f20-c574-4d66-9a18-b0cfb13587e1" />
 
 
 ### 3.2. Amazon DynamoDB Table
@@ -101,8 +101,10 @@ This table stores the processed, structured data for fast lookup.
 5.  Under **"Encryption at rest"**, choose **"Customer managed key (CMK)"** and select your `KMS-NAME`` key.
 6.  Click **"Create table"**.
 
-<img width="940" height="513" alt="image" src="https://github.com/user-attachments/assets/686a45bb-f2f1-47d4-80af-8e0322dae046" />
-<img width="940" height="488" alt="image" src="https://github.com/user-attachments/assets/3556bda1-b06e-47db-8b91-f254b0cfdcfb" />
+<img width="1366" height="711" alt="9" src="https://github.com/user-attachments/assets/eb5814b7-c977-4d98-90b6-e7e8caca6d05" />
+
+<img width="1366" height="709" alt="10" src="https://github.com/user-attachments/assets/2706072c-44b2-4224-aa4c-84ebb0fb6ae9" />
+
 
 
 ---
@@ -118,7 +120,7 @@ This topic serves as the publication point for critical alerts.
 3.  Choose **"Standard"** type.
 4.  Name the topic. Click **"Create topic"**.
  
-<img width="940" height="488" alt="image" src="https://github.com/user-attachments/assets/4bd7bc9f-194e-4696-a62b-77b0cbb1de07" />
+<img width="1366" height="707" alt="19" src="https://github.com/user-attachments/assets/8194c83e-28c3-4e4c-8f5b-b676b13d812c" />
 
 
 
@@ -128,7 +130,11 @@ This topic serves as the publication point for critical alerts.
 3.  Set **Endpoint** to the desired admin/driver email address (e.g., `ABCD@gmail.com`).
 4.  Click **"Create subscription"**.
 5.  Check the endpoint email inbox and click the **"Confirm subscription"** link. The status in the SNS Console will change to **"Confirmed"**.
-<img width="940" height="490" alt="image" src="https://github.com/user-attachments/assets/274e5539-2eee-4a7b-90ef-a66f8e5a6c77" />
+
+<img width="1366" height="709" alt="21" src="https://github.com/user-attachments/assets/008c879c-1bcf-4a7d-8d7b-469abb34ab7d" />
+
+<img width="1366" height="700" alt="22" src="https://github.com/user-attachments/assets/df45b5ac-864a-4222-ab0a-b400f97410c0" />
+
 
 ---
 
@@ -142,7 +148,8 @@ A model trained for binary classification (maintenance required/not required) mu
 * **Configuration:** The endpoint name must be set to `ENDPOINT-NAME` so the Lambda function can correctly invoke it.
 * **Note:** The Lambda function will send vehicle sensor data to this endpoint and receive a prediction label (e.g., **POSITIVE** or **NEGATIVE**).
 
-<img width="1366" height="768" alt="23" src="https://github.com/user-attachments/assets/0cfebf0f-d9ff-4c63-bf66-58bc72b259d8" />
+<img width="1366" height="768" alt="23" src="https://github.com/user-attachments/assets/5ea20917-c945-4b89-9ab2-80ec486b630a" />
+
 
 
 ### 5.2. AWS LAMBDA FUNCTION CREATION
@@ -156,8 +163,7 @@ A model trained for binary classification (maintenance required/not required) mu
 6.  Under **"Change default execution role"**, select **"Use an existing role"** and choose `LAMBDA-NAME`.
 7.  Click **"Create function"**.
 
-<img width="1366" height="711" alt="12" src="https://github.com/user-attachments/assets/e73bcd5f-274e-47a3-843d-863a954d1b6d" />
-
+<img width="1366" height="711" alt="12" src="https://github.com/user-attachments/assets/02f488cd-853d-48f6-b94e-ff98bbf949de" />
 
 **STEP 5.2.2: ADD S3 TRIGGER**
 1.  In the Lambda function designer, click **"Add trigger"**.
@@ -166,8 +172,10 @@ A model trained for binary classification (maintenance required/not required) mu
 4.  Set **Event type** to **"All object create events"**.
 5.  Acknowledge the recursive invocation warning and click **"Add"**.
 
-<img width="1366" height="709" alt="14" src="https://github.com/user-attachments/assets/bbfdb01b-8338-474c-a113-76f8da0e9f1d" />
-<img width="1366" height="709" alt="15" src="https://github.com/user-attachments/assets/09a5bf2a-14e2-463b-9dcb-9639aeed3537" />
+<img width="1366" height="709" alt="14" src="https://github.com/user-attachments/assets/bf135c3a-eea9-4977-85c8-e5332befdafa" />
+
+<img width="1366" height="709" alt="15" src="https://github.com/user-attachments/assets/ed9ec8c9-a873-4ec2-a25c-b77e74475175" />
+
 
 ---
 
@@ -180,7 +188,7 @@ In the Lambda Console, paste your Python logic into the `lambda_function.py` edi
 
 For FULL CODE : https://github.com/prinku-git/fleet-monitoring-predictive-maintenance-aws/blob/main/lambda_function.py
 
-<img width="1366" height="709" alt="16" src="https://github.com/user-attachments/assets/bc225535-5176-4618-81c8-0febc9eb5b4b" />
+<img width="1366" height="709" alt="16" src="https://github.com/user-attachments/assets/d87b821b-3cf1-468e-b413-ddbd33ca2910" />
 
 
 
@@ -201,7 +209,8 @@ For FULL CODE : https://github.com/prinku-git/fleet-monitoring-predictive-mainte
 Upload the **`test-data.txt`** file to the **`S3-BUCKET-NAME`** S3 bucket.  
 The S3 upload event immediately triggers the **`LAMBDA-NAME`** function.
 
-<img width="1366" height="711" alt="25" src="https://github.com/user-attachments/assets/8c68f5d2-238d-4ab9-9614-608067528dfa" />
+<img width="1366" height="711" alt="25" src="https://github.com/user-attachments/assets/98aa1cdd-45b9-4bea-8b11-23eec1ceffa9" />
+
 
 ---
 
@@ -211,7 +220,7 @@ Check the email inbox subscribed to the **`SNS-TOPIC-NAME`** topic.
 **Expected Outcome:**  
 An alert email should be received for **VHC001**, confirming the critical-condition alert mechanism is functional.
 
-<img width="1366" height="702" alt="26" src="https://github.com/user-attachments/assets/bbcd8aec-2205-4645-b4fa-fc14b649309c" />
+<img width="1366" height="702" alt="26" src="https://github.com/user-attachments/assets/91fa3dc2-0418-4139-8d21-c16fcc241bb8" />
 
 
 ---
@@ -227,8 +236,7 @@ Two new items should be visible:
 
 Both records should include the SageMaker prediction label (e.g., **POSITIVE**).
 
-<img width="1366" height="709" alt="27" src="https://github.com/user-attachments/assets/6cb8a4b8-e73c-4123-875e-99d9b6d4e059" />
-
+<img width="1366" height="709" alt="27" src="https://github.com/user-attachments/assets/23d8e2a2-a095-499b-bf43-fbc979b96616" />
 
 ---
 
@@ -243,7 +251,7 @@ Logs should show:
 - SNS publish  
 - SageMaker prediction result  
 
-<img width="1366" height="715" alt="28" src="https://github.com/user-attachments/assets/de9b89a2-0005-4f29-a7bc-326de17852e3" />
+<img width="1366" height="715" alt="28" src="https://github.com/user-attachments/assets/7b5d3764-15eb-4479-8563-6dab62c35315" />
 
 
 ---
