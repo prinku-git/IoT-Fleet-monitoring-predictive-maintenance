@@ -1,4 +1,4 @@
-# IOT FLEET MONITORING AND PREDICTIVE MAINTENANCE WITH SAGEMAKER - DOCUMENTATION
+# IOT SERVERLESS FLEET MONITORING AND PREDICTIVE MAINTENANCE WITH AMAZON SAGEMAKER - DOCUMENTATION
 
 ## 1. Project Overview and Architecture
 
@@ -281,4 +281,8 @@ Serverless (Lambda, DynamoDB, SNS, S3) ensures auto-scaling and low cost.
 ---
 
 ### Conclusion
-This project demonstrates strong cloud architecture, security design, serverless expertise, and ML integration—delivering a scalable, cost-efficient solution suitable for enterprise deployment.
+Designed and implemented an end-to-end serverless fleet monitoring predictive maintenance system using AWS.
+Built an automated workflow across S3, Lambda, SageMaker, DynamoDB, and SNS.
+Achieved real-time data processing, prediction, alerting, and secure storage.
+Integrated IAM and KMS to ensure secure access and data protection.
+The system is scalable, cost-effective, and suitable for large fleet operations
